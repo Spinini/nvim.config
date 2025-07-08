@@ -25,15 +25,17 @@ vim.o.inccommand = 'split'
 vim.o.cursorline = true
 vim.o.scrolloff = 10
 vim.o.confirm = true
-
--- Keybinds
-vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+vim.o.tabstop = 2
+vim.o.shiftwidth = 2
+vim.o.expandtab = true
+-- Keybinds vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
   group = vim.api.nvim_create_augroup('highlight-yank', { clear = true }),
@@ -43,15 +45,15 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- Package manager
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
+  local out = vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath }
   if vim.v.shell_error ~= 0 then
     vim.api.nvim_echo({
-      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out, "WarningMsg" },
-      { "\nPress any key to exit..." },
+      { 'Failed to clone lazy.nvim:\n', 'ErrorMsg' },
+      { out, 'WarningMsg' },
+      { '\nPress any key to exit...' },
     }, true, {})
     vim.fn.getchar()
     os.exit(1)
@@ -60,93 +62,169 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Packages
-require("lazy").setup({
+require('lazy').setup {
   spec = {
     -- Theme
     {
-      "ellisonleao/gruvbox.nvim",
+      'ellisonleao/gruvbox.nvim',
       priority = 1000,
       lazy = false,
       config = function()
-        vim.cmd.colorscheme("gruvbox")
+        vim.cmd.colorscheme 'gruvbox'
       end,
     },
     -- Which-key
     {
-      "folke/which-key.nvim",
-      event = "VeryLazy",
-      opts = {},
+      'folke/which-key.nvim',
+      event = 'VeryLazy',
+      opts = {
+        preset = 'helix',
+        spec = {
+          { '<leader>f', group = '[F]iles' },
+          { '<leader>d', group = '[D]iagnostics' },
+          { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
+        },
+      },
       keys = {
         {
-          "<leader>?",
+          '<leader>?',
           function()
-            require("which-key").show({ global = false })
+            require('which-key').show { global = false }
           end,
-          desc = "Buffer Local Keymaps (which-key)",
+          desc = 'Buffer Local Keymaps (which-key)',
         },
       },
     },
     -- Treesitter
     {
-      "nvim-treesitter/nvim-treesitter",
+      'nvim-treesitter/nvim-treesitter',
       opts = {
         auto_install = true,
-        ensure_installed = {"lua"}
-      }
+        ensure_installed = { 'lua' },
+      },
     },
     -- Mini Nvim
     {
-      "echasnovski/mini.nvim",
+      'echasnovski/mini.nvim',
       config = function()
         require('mini.ai').setup { n_lines = 500 }
-        -- require('mini.icons').setup()
+        require('mini.icons').setup()
         require('mini.pairs').setup()
         require('mini.surround').setup()
-        require('mini.statusline').setup {use_icons = false}
-      end
+        require('mini.statusline').setup()
+      end,
     },
     -- LSP
     {
-      "neovim/nvim-lspconfig",
+      'neovim/nvim-lspconfig',
+      config = function()
+        vim.api.nvim_set_keymap('n', '<leader>do', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
+        vim.api.nvim_set_keymap('n', '<leader>d[', '<cmd>lua vim.diagnostic.goto_prev()<CR>', { noremap = true, silent = true })
+        vim.api.nvim_set_keymap('n', '<leader>d]', '<cmd>lua vim.diagnostic.goto_next()<CR>', { noremap = true, silent = true })
+        vim.api.nvim_set_keymap('n', '<leader>da', '<cmd>lua FzfLua.lsp_code_actions()<CR>', { noremap = true, silent = true })
+        vim.diagnostic.config {
+          severity_sort = true,
+          float = { border = 'rounded', source = 'if_many' },
+          underline = { severity = vim.diagnostic.severity.ERROR },
+          signs = vim.g.have_nerd_font and {
+            text = {
+              [vim.diagnostic.severity.ERROR] = '󰅚 ',
+              [vim.diagnostic.severity.WARN] = '󰀪 ',
+              [vim.diagnostic.severity.INFO] = '󰋽 ',
+              [vim.diagnostic.severity.HINT] = '󰌶 ',
+            },
+          } or {},
+          virtual_text = {
+            source = 'if_many',
+            spacing = 4,
+            format = function(diagnostic)
+              local diagnostic_message = {
+                [vim.diagnostic.severity.ERROR] = diagnostic.message,
+                [vim.diagnostic.severity.WARN] = diagnostic.message,
+                [vim.diagnostic.severity.INFO] = diagnostic.message,
+                [vim.diagnostic.severity.HINT] = diagnostic.message,
+              }
+              return diagnostic_message[diagnostic.severity]
+            end,
+          },
+        }
+      end,
       dependencies = {
         {
-          "mason-org/mason.nvim",
-          build = ":MasonUpdate",
-          cmd = { "Mason", "MasonUpdate", "MasonLog", "MasonInstall", "MasonUninstall", "MasonUninstallAll" },
+          'mason-org/mason.nvim',
+          build = ':MasonUpdate',
+          cmd = { 'Mason', 'MasonUpdate', 'MasonLog', 'MasonInstall', 'MasonUninstall', 'MasonUninstallAll' },
           config = true,
         },
         {
-          "mason-org/mason-lspconfig.nvim",
+          'mason-org/mason-lspconfig.nvim',
           config = true,
           keys = {
-            { "<C-space>", "<cmd>lua vim.lsp.completion.get()  <CR>", mode = "i" },
-            { "gh",        "<cmd>lua vim.lsp.buf.hover()       <CR>" },
-            { "gd",        "<cmd>lua vim.lsp.buf.definition()  <CR>" },
-            { "gD",        "<cmd>lua vim.lsp.buf.declaration() <CR>" },
+            { '<C-space>', '<cmd>lua vim.lsp.completion.get()  <CR>', mode = 'i' },
+            { 'gh', '<cmd>lua vim.lsp.buf.hover()       <CR>' },
+            { 'gd', '<cmd>lua vim.lsp.buf.definition()  <CR>' },
+            { 'gD', '<cmd>lua vim.lsp.buf.declaration() <CR>' },
           },
         },
+        { 'j-hui/fidget.nvim', opts = {} },
+        { 'folke/lazydev.nvim', opts = {} },
       },
+    },
+    -- Formatting
+    {
+      'stevearc/conform.nvim',
+      event = { 'BufReadPre', 'BufNewFile' },
+      config = function()
+        local conform = require 'conform'
+
+        conform.setup {
+          formatters_by_ft = {
+            javascript = { 'prettier' },
+            typescript = { 'prettier' },
+            javascriptreact = { 'prettier' },
+            typescriptreact = { 'prettier' },
+            svelte = { 'prettier' },
+            css = { 'prettier' },
+            html = { 'prettier' },
+            json = { 'prettier' },
+            yaml = { 'prettier' },
+            markdown = { 'prettier' },
+            graphql = { 'prettier' },
+            lua = { 'stylua', append_args = { '--indent_type=Spaces' } },
+            python = { 'ruff' },
+          },
+          format_on_save = {
+            lsp_fallback = true,
+            async = false,
+            timeout_ms = 500,
+          },
+        }
+      end,
     },
     -- Autocomplete
     {
-      "Saghen/blink.cmp",
+      'Saghen/blink.cmp',
       version = '1.*',
       opts = {
         keymap = { preset = 'default' },
         appearance = {
-          nerd_font_variant = 'mono'
+          nerd_font_variant = 'mono',
         },
         completion = { documentation = { auto_show = false } },
         sources = {
           default = { 'lsp', 'path', 'snippets', 'buffer' },
         },
-        fuzzy = { implementation = "lua" }
+        fuzzy = { implementation = 'lua' },
       },
-      opts_extend = { "sources.default" }
+      opts_extend = { 'sources.default' },
     },
     -- Search
     {
-      "ibhagwan/fzf-lua"
+      'ibhagwan/fzf-lua',
+      config = function()
+        local fzf = require 'fzf-lua'
+        fzf.register_ui_select()
+      end,
     },
     -- Indents length detection
     {
@@ -154,6 +232,6 @@ require("lazy").setup({
       config = true,
     },
   },
-  install = { colorscheme = { "gruvbox" } },
+  install = { colorscheme = { 'gruvbox' } },
   checker = { enabled = true },
-})
+}
