@@ -6,7 +6,7 @@ vim.o.number = true
 vim.o.relativenumber = true
 vim.o.mouse = 'a'
 -- TODO: change this when using new status line
--- vim.o.showmode = false
+vim.o.showmode = false
 vim.schedule(function()
   vim.o.clipboard = 'unnamedplus'
 end)
@@ -85,6 +85,25 @@ require("lazy").setup({
           desc = "Buffer Local Keymaps (which-key)",
         },
       },
+    },
+    -- Treesitter
+    {
+      "nvim-treesitter/nvim-treesitter",
+      opts = {
+        auto_install = true,
+        ensure_installed = {"lua"}
+      }
+    },
+    -- Mini Nvim
+    {
+      "echasnovski/mini.nvim",
+      config = function()
+        require('mini.ai').setup { n_lines = 500 }
+        -- require('mini.icons').setup()
+        require('mini.pairs').setup()
+        require('mini.surround').setup()
+        require('mini.statusline').setup {use_icons = false}
+      end
     },
     -- LSP
     {
