@@ -29,7 +29,7 @@ vim.o.tabstop = 2
 vim.o.shiftwidth = 2
 vim.o.expandtab = true
 -- Keybinds vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+--vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
@@ -80,9 +80,9 @@ require('lazy').setup {
       opts = {
         preset = 'helix',
         spec = {
-          { '<leader>f', group = '[F]iles' },
-          { '<leader>d', group = '[D]iagnostics' },
-          { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
+          -- { '<leader>f', group = '[F]iles' },
+          -- { '<leader>d', group = '[D]iagnostics' },
+          -- { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
         },
       },
       keys = {
@@ -118,10 +118,6 @@ require('lazy').setup {
     {
       'neovim/nvim-lspconfig',
       config = function()
-        vim.api.nvim_set_keymap('n', '<leader>do', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
-        vim.api.nvim_set_keymap('n', '<leader>d[', '<cmd>lua vim.diagnostic.goto_prev()<CR>', { noremap = true, silent = true })
-        vim.api.nvim_set_keymap('n', '<leader>d]', '<cmd>lua vim.diagnostic.goto_next()<CR>', { noremap = true, silent = true })
-        vim.api.nvim_set_keymap('n', '<leader>da', '<cmd>lua FzfLua.lsp_code_actions()<CR>', { noremap = true, silent = true })
         vim.diagnostic.config {
           severity_sort = true,
           float = { border = 'rounded', source = 'if_many' },
@@ -160,10 +156,10 @@ require('lazy').setup {
           'mason-org/mason-lspconfig.nvim',
           config = true,
           keys = {
-            { '<C-space>', '<cmd>lua vim.lsp.completion.get()  <CR>', mode = 'i' },
-            { 'gh', '<cmd>lua vim.lsp.buf.hover()       <CR>' },
-            { 'gd', '<cmd>lua vim.lsp.buf.definition()  <CR>' },
-            { 'gD', '<cmd>lua vim.lsp.buf.declaration() <CR>' },
+            -- { '<C-space>', '<cmd>lua vim.lsp.completion.get()  <CR>', mode = 'i' },
+            -- { 'gh', '<cmd>lua vim.lsp.buf.hover()       <CR>' },
+            -- { 'gd', '<cmd>lua vim.lsp.buf.definition()  <CR>' },
+            -- { 'gD', '<cmd>lua vim.lsp.buf.declaration() <CR>' },
           },
         },
         { 'j-hui/fidget.nvim', opts = {} },
@@ -221,10 +217,15 @@ require('lazy').setup {
     -- Search
     {
       'ibhagwan/fzf-lua',
+      lazy = false,
       config = function()
-        local fzf = require 'fzf-lua'
-        fzf.register_ui_select()
+        require('fzf-lua').setup()
+        FzfLua.register_ui_select()
       end,
+      keys = {
+        { '<leader>f', '<cmd>lua FzfLua.files()<CR>', desc = 'File Picker' },
+        { '<leader>b', '<cmd>lua FzfLua.buffers()<CR>', desc = 'File Picker' },
+      },
     },
     -- Indents length detection
     {
