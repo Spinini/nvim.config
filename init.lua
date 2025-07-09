@@ -80,6 +80,7 @@ require('lazy').setup {
       opts = {
         preset = 'helix',
         spec = {
+          { '<leader>v', group = '[V]irtualEnv',  },
           -- { '<leader>f', group = '[F]iles' },
           -- { '<leader>d', group = '[D]iagnostics' },
           -- { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
@@ -117,6 +118,7 @@ require('lazy').setup {
     -- LSP
     {
       'neovim/nvim-lspconfig',
+      keys = {},
       config = function()
         vim.diagnostic.config {
           severity_sort = true,
@@ -146,24 +148,41 @@ require('lazy').setup {
         }
       end,
       dependencies = {
+        -- Package manager for formatters/LSPs/...
         {
           'mason-org/mason.nvim',
           build = ':MasonUpdate',
           cmd = { 'Mason', 'MasonUpdate', 'MasonLog', 'MasonInstall', 'MasonUninstall', 'MasonUninstallAll' },
           config = true,
         },
+        -- Interaction between Mason and LspConfig
         {
           'mason-org/mason-lspconfig.nvim',
           config = true,
           keys = {
-            -- { '<C-space>', '<cmd>lua vim.lsp.completion.get()  <CR>', mode = 'i' },
-            -- { 'gh', '<cmd>lua vim.lsp.buf.hover()       <CR>' },
-            -- { 'gd', '<cmd>lua vim.lsp.buf.definition()  <CR>' },
-            -- { 'gD', '<cmd>lua vim.lsp.buf.declaration() <CR>' },
+            { '<C-space>', '<cmd>lua vim.lsp.completion.get()  <CR>', mode = 'i' },
+            { 'gh', '<cmd>lua vim.lsp.buf.hover()       <CR>' },
+            { 'gd', '<cmd>lua vim.lsp.buf.definition()  <CR>' },
+            { 'gD', '<cmd>lua vim.lsp.buf.declaration() <CR>' },
           },
         },
+        -- Logs at the right side
         { 'j-hui/fidget.nvim', opts = {} },
+        -- LSP setup for Neovim development
         { 'folke/lazydev.nvim', opts = {} },
+        -- Python Virtual Environment Selector
+        {
+          'linux-cultist/venv-selector.nvim',
+          branch = 'regexp',
+          config = true,
+          event = 'VeryLazy', -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
+          keys = {
+            -- Keymap to open VenvSelector to pick a venv.
+            { '<leader>vs', '<cmd>VenvSelect<cr>' },
+            -- Keymap to retrieve the venv from a cache (the one previously used for the same project directory).
+            { '<leader>vc', '<cmd>VenvSelectCached<cr>' },
+          },
+        },
       },
     },
     -- Formatting
@@ -224,7 +243,8 @@ require('lazy').setup {
       end,
       keys = {
         { '<leader>f', '<cmd>lua FzfLua.files()<CR>', desc = 'File Picker' },
-        { '<leader>b', '<cmd>lua FzfLua.buffers()<CR>', desc = 'File Picker' },
+        { '<leader>b', '<cmd>lua FzfLua.buffers()<CR>', desc = 'Buffer Picker' },
+        { '<leader>s', '<cmd>lua FzfLua.lsp_document_symbols()<CR>', desc = 'Symbol Picker' },
       },
     },
     -- Indents length detection
