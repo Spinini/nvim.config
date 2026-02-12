@@ -19,6 +19,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         local bufmap = function(mode, rhs, lhs, desc) vim.keymap.set(mode, rhs, lhs, { buffer = event.buf, desc = desc }) end
         bufmap('n', '<leader>lf', vim.lsp.buf.format, 'Format')
         bufmap('n', '<leader>lr', vim.lsp.buf.rename, 'Rename Symbol')
+        bufmap('n', '<leader>la', '<Cmd>FzfLua lsp_code_actions<CR>', 'Code Action')
         bufmap('n', 'gd', vim.lsp.buf.definition, '(LSP) Go To Definition')
         bufmap('n', 'grr', '<Cmd>FzfLua lsp_references<CR>', '(Fzf) References')
         bufmap('n', 'grd', vim.lsp.buf.declaration, '(LSP) Go To Declaraction')
