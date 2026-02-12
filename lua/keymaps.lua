@@ -20,6 +20,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
         bufmap('n', '<leader>lf', vim.lsp.buf.format, 'Format')
         bufmap('n', '<leader>lr', vim.lsp.buf.rename, 'Rename Symbol')
         bufmap('n', '<leader>la', '<Cmd>FzfLua lsp_code_actions<CR>', 'Code Action')
+        bufmap('n', '<leader>ls', '<Cmd>FzfLua lsp_document_symbols<CR>', 'Document Symbols')
+        bufmap('n', '<leader>lw', '<Cmd>FzfLua lsp_workspace_symbols<CR>', 'Workspace Symbols')
+        bufmap('n', '<leader>ld', '<Cmd>FzfLua diagnostics_workspace<CR>', 'Workspace Diagnostics')
+
         bufmap('n', 'gd', vim.lsp.buf.definition, '(LSP) Go To Definition')
         bufmap('n', 'grr', '<Cmd>FzfLua lsp_references<CR>', '(Fzf) References')
         bufmap('n', 'grd', vim.lsp.buf.declaration, '(LSP) Go To Declaraction')
@@ -58,4 +62,7 @@ miniclue.setup {
         miniclue.gen_clues.windows(),
         miniclue.gen_clues.z(),
     },
+    window = {
+        delay = 200,
+    }
 }
