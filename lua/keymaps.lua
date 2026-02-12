@@ -13,7 +13,7 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
--- LSP Keybinds
+-- LSP Keymaps
 vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(event)
         local bufmap = function(mode, rhs, lhs, desc) vim.keymap.set(mode, rhs, lhs, { buffer = event.buf, desc = desc }) end
@@ -33,6 +33,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
 vim.keymap.set('n', '<leader>fb', '<cmd>FzfLua buffers<CR>', { desc = 'Find Buffers' })
 vim.keymap.set('n', '<leader>ff', '<cmd>FzfLua files<CR>', { desc = 'Find Files' })
 vim.keymap.set('n', '<leader>fg', '<cmd>FzfLua grep_visual<CR>', { desc = 'Grep Files' })
+
+-- Git Keymaps
+vim.keymap.set('n', '<leader>gs', '<cmd>FzfLua git_status<CR>', { desc = 'Git Status' })
 
 -- Miniclue setup
 local miniclue = require 'mini.clue'
@@ -54,6 +57,7 @@ miniclue.setup {
         -- Enhance this by adding descriptions for <Leader> mapping groups
         { mode = 'n', keys = '<Leader>f', desc = '+Find' },
         { mode = 'n', keys = '<Leader>l', desc = '+LSP' },
+        { mode = 'n', keys = '<Leader>g', desc = '+Git' },
         miniclue.gen_clues.square_brackets(),
         miniclue.gen_clues.builtin_completion(),
         miniclue.gen_clues.g(),
