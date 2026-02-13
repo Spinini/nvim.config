@@ -10,6 +10,7 @@ vim.pack.add({
     { src = "https://github.com/mason-org/mason.nvim" },
     { src = "https://github.com/neovim/nvim-lspconfig" },
     { src = "https://github.com/folke/lazydev.nvim" },
+    { src = "https://github.com/saghen/blink.cmp" },
     -- Treesitter
     { src = "https://github.com/nvim-treesitter/nvim-treesitter"},
 })
