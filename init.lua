@@ -1,5 +1,4 @@
 require("packages")
-require("generic")
+require("settings")
 require("plugins")
 require("keymaps")
-
