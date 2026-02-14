@@ -52,6 +52,10 @@
       "rev": "30d2239ecf8adab9bc0d07d42e7a07283879dab6",
       "src": "https://github.com/vague2k/vague.nvim"
     },
+    "venv-selector.nvim": {
+      "rev": "5b738baf1ea8aac6ab1cf10f42aaeb495fce0c73",
+      "src": "https://github.com/linux-cultist/venv-selector.nvim"
+    },
     "yazi.nvim": {
       "rev": "ba0cf190631af40e82b13a78b7bce5e18ce059b3",
       "src": "https://github.com/mikavilpas/yazi.nvim"

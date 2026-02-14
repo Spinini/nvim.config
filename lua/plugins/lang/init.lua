@@ -7,6 +7,8 @@ require('mason').setup {
         },
     },
 }
+
+-- Autocomplete
 require('blink-cmp').setup {
     fuzzy = {implementation = 'lua'}
 }
@@ -21,17 +23,17 @@ lua_tools = require 'plugins.lang.lua'
 cpp_tools = require 'plugins.lang.cpp'
 python_tools = require 'plugins.lang.python'
 
+-- Enable treesitter
 vim.api.nvim_create_autocmd('FileType', {
     pattern = {
         -- Lua
         'lua',
-        -- C/C++
+        -- C
         'c',
-        'h',
+        -- C++
         'cpp',
-        'hpp',
         -- Python
-        'py',
+        'python',
     },
     callback = function()
         vim.treesitter.start()

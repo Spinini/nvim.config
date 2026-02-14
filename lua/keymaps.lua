@@ -34,6 +34,13 @@ vim.keymap.set('n', '<leader>fb', '<cmd>FzfLua buffers<CR>', { desc = 'Find Buff
 vim.keymap.set('n', '<leader>ff', '<cmd>FzfLua files<CR>', { desc = 'Find Files' })
 vim.keymap.set('n', '<leader>fg', '<cmd>FzfLua grep_visual<CR>', { desc = 'Grep Files' })
 
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = {'python'},
+    callback = function()
+        vim.keymap.set('n', '<leader>lv', '<Cmd>VenvSelect<CR>', { buffer = true, desc = 'Select VirtualEnv' })
+    end
+})
+
 -- Git Keymaps
 vim.keymap.set('n', '<leader>gs', '<cmd>FzfLua git_status<CR>', { desc = 'Git Status' })
 
