@@ -8,6 +8,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
         bufmap('n', 'grd', vim.lsp.buf.declaration, '(LSP) Go To Declaraction')
     end,
 })
-conform = require 'conform'
+local conform = require 'conform'
+local format_with_fallback = function() conform.format({lsp_format="fallback"}) end
+
 vim.keymap.set('n', '<leader>pm', '<cmd>Mason<CR>', { desc = 'Mason' })
-vim.keymap.set({ 'n', 'x' }, 'gq', conform.format, { desc = 'Conform Format' })
+vim.keymap.set({ 'n', 'x' }, 'gq', format_with_fallback, { desc = 'Conform Format' })
