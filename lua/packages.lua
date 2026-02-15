@@ -11,6 +11,7 @@ vim.pack.add({
     { src = "https://github.com/neovim/nvim-lspconfig" },
     { src = "https://github.com/folke/lazydev.nvim" },
     { src = "https://github.com/saghen/blink.cmp" },
+    { src = "https://github.com/stevearc/conform.nvim" },
     { src = "https://github.com/linux-cultist/venv-selector.nvim" },
     -- Treesitter
     { src = "https://github.com/nvim-treesitter/nvim-treesitter"},

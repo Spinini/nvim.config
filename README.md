@@ -3,5 +3,5 @@ Requirements
 - fzf
 - fd
 - git
-- Treesitter CLI
-- Yazi
+- treesitter-cli
+- yazi

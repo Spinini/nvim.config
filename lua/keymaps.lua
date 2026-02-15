@@ -1,10 +1,7 @@
 -- Std Keymaps
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+vim.keymap.set('n', '<leader>w', ':write<CR>', { desc = 'Write' })
 vim.keymap.set('n', '<leader>q', ':quit<CR>', { desc = 'Quit' })
-vim.keymap.set('n', '<leader>w', function()
-    vim.lsp.buf.format()
-    vim.cmd 'write'
-end, { desc = 'Write' })
 
 -- Window Nav
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })

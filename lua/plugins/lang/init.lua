@@ -14,24 +14,17 @@ ensure_installed = function(package_name)
     if not registry.is_installed(package_name) then vim.cmd('MasonInstall ' .. package_name) end
 end
 
-require 'plugins.lsp.lua'
-require 'plugins.lsp.cpp'
-require 'plugins.lsp.python'
-
--- Enable treesitter
-vim.api.nvim_create_autocmd('FileType', {
-    pattern = {
-        'lua',
-        'c',
-        'cpp',
-        'python',
-    },
-    callback = function()
-        vim.treesitter.start()
-    end,
-})
-
-require("plugins.lsp.keymaps")
 require('blink-cmp').setup {
     fuzzy = {implementation = 'lua'}
 }
+require('conform').setup{}
+
+require 'plugins.lang.cpp'
+require 'plugins.lang.json'
+require 'plugins.lang.lua'
+require 'plugins.lang.python'
+require 'plugins.lang.yaml'
+require 'plugins.lang.treesitter'
+require 'plugins.lang.keymaps'
+
+
