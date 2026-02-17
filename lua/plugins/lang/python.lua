@@ -1,8 +1,8 @@
 ensure_installed("ruff")
-ensure_installed("ty")
+ensure_installed("basedpyright")
 
-vim.lsp.enable({"ty"})
-vim.lsp.enable({"ruff"})
+vim.lsp.enable({"basedpyright"})
+require('conform').formatters_by_ft.python = {'ruff_format', 'ruff_fix'}
 
 require("venv-selector").setup()
 
