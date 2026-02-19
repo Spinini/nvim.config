@@ -1,9 +1,12 @@
 lang_list = {
     'c',
     'cpp',
+    'html',
     'json',
     'lua',
     'python',
+    'javascript',
+    'typescript',
     'yaml',
 }
 
