@@ -10,3 +10,6 @@ require("yazi").setup(
 )
 vim.g.loaded_netrwPlugin = 1
 vim.keymap.set('n', '<leader>e', '<cmd>Yazi<CR>', { desc = 'Open File Browser' })
+
+require("grug-far").setup{}
+vim.keymap.set('n', '<leader>fr', '<cmd>GrugFar<CR>', { desc = 'Find/Replace' })

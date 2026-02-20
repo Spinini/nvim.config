@@ -6,6 +6,7 @@ vim.pack.add({
     { src = "https://github.com/mikavilpas/yazi.nvim" },
     { src = "https://github.com/nvim-lua/plenary.nvim" },
     { src = "https://github.com/ibhagwan/fzf-lua" },
+    { src = "https://github.com/MagicDuck/grug-far.nvim" },
     -- LSP
     { src = "https://github.com/mason-org/mason.nvim" },
     { src = "https://github.com/neovim/nvim-lspconfig" },
