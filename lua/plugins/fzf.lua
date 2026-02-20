@@ -1,6 +1,6 @@
 vim.keymap.set("n", "<leader>ff", fzf.files, { desc = 'Files'})
 vim.keymap.set("n", "<leader>fg", fzf.live_grep, { desc = 'Live Grep'})
-vim.keymap.set("n", "<leader>fb", fzf.buffers, { desc = 'Buffers'})
+vim.keymap.set("n", "<leader>b", fzf.buffers, { desc = 'Buffers'})
 vim.keymap.set("n", "<leader>fh", fzf.help_tags, { desc = 'Help Tags'})
 
 -- LSP Keymaps
