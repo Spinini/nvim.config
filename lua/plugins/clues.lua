@@ -29,6 +29,6 @@ miniclue.setup {
         miniclue.gen_clues.z(),
     },
     window = {
-        delay = 200,
+        delay = 400,
     }
 }
