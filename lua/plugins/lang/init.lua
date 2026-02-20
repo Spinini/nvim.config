@@ -22,6 +22,7 @@ require('conform').setup{}
 require 'plugins.lang.cpp'
 require 'plugins.lang.json'
 require 'plugins.lang.lua'
+require 'plugins.lang.markdown'
 require 'plugins.lang.python'
 require 'plugins.lang.web'
 require 'plugins.lang.yaml'

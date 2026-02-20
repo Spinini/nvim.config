@@ -6,6 +6,8 @@ lang_list = {
     'lua',
     'python',
     'javascript',
+    'markdown',
+    'markdown-inline',
     'typescript',
     'yaml',
 }

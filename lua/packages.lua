@@ -18,4 +18,6 @@ vim.pack.add({
     { src = "https://github.com/nvim-treesitter/nvim-treesitter"},
     -- Git
     { src = "https://github.com/lewis6991/gitsigns.nvim" },
+    -- MD
+    { src = "https://github.com/OXY2DEV/markview.nvim" },
 })
