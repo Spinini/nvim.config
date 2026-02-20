@@ -1,6 +1,7 @@
 require("plugins.clues")
 require("plugins.files")
 require("plugins.fzf")
+require("plugins.git")
 require("plugins.lang")
 require("plugins.ui")
 require("plugins.theme")

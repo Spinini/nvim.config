@@ -15,4 +15,6 @@ vim.pack.add({
     { src = "https://github.com/linux-cultist/venv-selector.nvim" },
     -- Treesitter
     { src = "https://github.com/nvim-treesitter/nvim-treesitter"},
+    -- Git
+    { src = "https://github.com/lewis6991/gitsigns.nvim" },
 })
