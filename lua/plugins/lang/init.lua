@@ -17,6 +17,7 @@ end
 require('blink-cmp').setup {
     fuzzy = {implementation = 'lua'}
 }
+require('guess-indent').setup {}
 require('conform').setup{}
 
 require 'plugins.lang.cpp'
