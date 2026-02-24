@@ -76,6 +76,10 @@
       "rev": "5b738baf1ea8aac6ab1cf10f42aaeb495fce0c73",
       "src": "https://github.com/linux-cultist/venv-selector.nvim"
     },
+    "vim-illuminate": {
+      "rev": "0d1e93684da00ab7c057410fecfc24f434698898",
+      "src": "https://github.com/RRethy/vim-illuminate"
+    },
     "yazi.nvim": {
       "rev": "ba0cf190631af40e82b13a78b7bce5e18ce059b3",
       "src": "https://github.com/mikavilpas/yazi.nvim"
