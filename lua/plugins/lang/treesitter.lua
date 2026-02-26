@@ -1,22 +1,31 @@
 lang_list = {
+    'vim',
+    'vimdoc',
+    'rust',
     'c',
     'cpp',
+    'go',
     'html',
+    'css',
+    'javascript',
     'json',
     'lua',
-    'python',
-    'javascript',
     'markdown',
-    'markdown-inline',
+    'python',
     'typescript',
-    'yaml',
+    'vue',
+    'svelte',
+    'bash',
+    'lua',
+    'python',
 }
 
-require("nvim-treesitter").install(lang_list)
+require('nvim-treesitter').install(lang_list)
 
-vim.api.nvim_create_autocmd('FileType', {
+vim.api.nvim_create_autocmd({ 'BufEnter', 'FileType' }, {
     pattern = lang_list,
-    callback = function()
-        vim.treesitter.start()
+    callback = function(args)
+        vim.treesitter.start(args.buf)
+        -- vim.bo[args.buf].syntax = 'ON'
     end,
 })

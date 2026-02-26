@@ -16,7 +16,11 @@ vim.pack.add {
     { src = 'https://github.com/stevearc/conform.nvim' },
     { src = 'https://github.com/linux-cultist/venv-selector.nvim' },
     -- Treesitter
-    { src = 'https://github.com/nvim-treesitter/nvim-treesitter' },
+    {
+        src = 'https://github.com/nvim-treesitter/nvim-treesitter',
+        branch = 'main',
+        build = ':TSUpdate',
+    },
     { src = 'https://github.com/RRethy/vim-illuminate' },
     -- Git
     { src = 'https://github.com/lewis6991/gitsigns.nvim' },
