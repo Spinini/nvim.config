@@ -26,6 +26,6 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'FileType' }, {
     pattern = lang_list,
     callback = function(args)
         vim.treesitter.start(args.buf)
-        -- vim.bo[args.buf].syntax = 'ON'
+        vim.bo[args.buf].syntax = 'ON' -- Enable regex if treesitter fails
     end,
 })
