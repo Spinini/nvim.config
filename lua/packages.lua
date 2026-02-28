@@ -1,6 +1,10 @@
 vim.pack.add {
+    -- Theme
     { src = 'https://github.com/nvim-tree/nvim-web-devicons' },
     { src = 'https://github.com/rebelot/kanagawa.nvim' },
+    { src = 'https://github.com/navarasu/onedark.nvim' },
+    { src = 'https://github.com/bluz71/vim-moonfly-colors' },
+    -- Misc
     { src = 'https://github.com/nvim-mini/mini.nvim' },
     { src = 'https://github.com/NMAC427/guess-indent.nvim' },
     -- Find
