@@ -15,10 +15,10 @@ ensure_installed = function(package_name)
 end
 
 require('blink-cmp').setup {
-    fuzzy = {implementation = 'lua'}
+    fuzzy = { implementation = 'lua' },
 }
 require('guess-indent').setup {}
-require('conform').setup{}
+require('conform').setup {}
 
 require 'plugins.lang.cpp'
 require 'plugins.lang.json'
@@ -26,9 +26,8 @@ require 'plugins.lang.lua'
 require 'plugins.lang.markdown'
 require 'plugins.lang.python'
 require 'plugins.lang.rust'
+require 'plugins.lang.slang'
 require 'plugins.lang.web'
 require 'plugins.lang.yaml'
 require 'plugins.lang.treesitter'
 require 'plugins.lang.keymaps'
-
-

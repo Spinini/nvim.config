@@ -14,6 +14,7 @@ lang_list = {
     'python',
     'typescript',
     'vue',
+    'slang',
     'svelte',
     'bash',
     'lua',
