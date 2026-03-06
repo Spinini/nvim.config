@@ -20,14 +20,6 @@ require('blink-cmp').setup {
 require('guess-indent').setup {}
 require('conform').setup {}
 
-require 'plugins.lang.cpp'
-require 'plugins.lang.json'
-require 'plugins.lang.lua'
-require 'plugins.lang.markdown'
-require 'plugins.lang.python'
-require 'plugins.lang.rust'
-require 'plugins.lang.slang'
-require 'plugins.lang.web'
-require 'plugins.lang.yaml'
+require 'plugins.lang.tools'
 require 'plugins.lang.treesitter'
 require 'plugins.lang.keymaps'

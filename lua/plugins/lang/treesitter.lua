@@ -19,6 +19,7 @@ lang_list = {
     'bash',
     'lua',
     'python',
+    'sql',
 }
 
 require('nvim-treesitter').install(lang_list)
