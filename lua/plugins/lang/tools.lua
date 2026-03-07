@@ -1,24 +1,31 @@
--- Web
-ensure_installed 'typescript-language-server'
-ensure_installed 'prettierd'
+-- C++
+ensure_installed 'clangd'
+ensure_installed 'clang-format'
+vim.lsp.enable { 'clangd' }
+require('conform').formatters_by_ft.cpp = { 'clang-format' }
 
-vim.lsp.enable { 'ts_ls' }
-require('conform').formatters_by_ft.html = { 'prettierd' }
-require('conform').formatters_by_ft.typescript = { 'prettierd' }
-require('conform').formatters_by_ft.javascript = { 'prettierd' }
+-- Json
+ensure_installed 'jq'
+require('conform').formatters_by_ft.json = { 'jq' }
 
--- Yaml
-ensure_installed 'yamlfmt'
-require('conform').formatters_by_ft.yaml = { 'yamlfmt' }
+-- Lua
+ensure_installed 'lua-language-server'
+ensure_installed 'stylua'
 
--- Slang
-ensure_installed 'slang'
-vim.lsp.enable { 'slangd' }
+vim.lsp.enable { 'lua_ls' }
+require('conform').formatters_by_ft.lua = { 'stylua' }
 
--- Rust
-ensure_installed 'rust-analyzer'
-vim.lsp.enable { 'rust_analyzer' }
-require('conform').formatters_by_ft.rust = { 'rustfmt' }
+require('lazydev').setup {}
+
+-- Markdown
+require('markview').setup {
+    preview = { enable = false },
+}
+
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = { 'markdown' },
+    callback = function() vim.keymap.set('n', '<leader>m', '<Cmd>Markview<CR>', { buffer = true, desc = 'Toggle Markview' }) end,
+})
 
 -- Python
 ensure_installed 'ruff'
@@ -34,36 +41,28 @@ vim.api.nvim_create_autocmd('FileType', {
     callback = function() vim.keymap.set('n', '<leader>lv', '<Cmd>VenvSelect<CR>', { buffer = true, desc = 'Select VirtualEnv' }) end,
 })
 
--- Markdown
-require('markview').setup {
-    preview = { enable = false },
-}
+-- Rust
+ensure_installed 'rust-analyzer'
+vim.lsp.enable { 'rust_analyzer' }
+require('conform').formatters_by_ft.rust = { 'rustfmt' }
 
-vim.api.nvim_create_autocmd('FileType', {
-    pattern = { 'markdown' },
-    callback = function() vim.keymap.set('n', '<leader>m', '<Cmd>Markview<CR>', { buffer = true, desc = 'Toggle Markview' }) end,
-})
-
--- Lua
-ensure_installed 'lua-language-server'
-ensure_installed 'stylua'
-
-vim.lsp.enable { 'lua_ls' }
-require('conform').formatters_by_ft.lua = { 'stylua' }
-
-require('lazydev').setup {}
-require('nvim-treesitter').install { 'lua' }
-
--- Json
-ensure_installed 'jq'
-require('conform').formatters_by_ft.json = { 'jq' }
-
--- C++
-ensure_installed 'clangd'
-ensure_installed 'clang-format'
-vim.lsp.enable { 'clangd' }
-require('conform').formatters_by_ft.cpp = { 'clang-format' }
+-- Slang
+ensure_installed 'slang'
+vim.lsp.enable { 'slangd' }
 
 -- SQL
 ensure_installed 'sqlfmt'
 require('conform').formatters_by_ft.sql = { 'sqlfmt' }
+
+-- Web
+ensure_installed 'typescript-language-server'
+ensure_installed 'prettierd'
+
+vim.lsp.enable { 'ts_ls' }
+require('conform').formatters_by_ft.html = { 'prettierd' }
+require('conform').formatters_by_ft.typescript = { 'prettierd' }
+require('conform').formatters_by_ft.javascript = { 'prettierd' }
+
+-- Yaml
+ensure_installed 'yamlfmt'
+require('conform').formatters_by_ft.yaml = { 'yamlfmt' }
