@@ -1,8 +1,17 @@
+-- nvim-lspconfig: https://github.com/neovim/nvim-lspconfig/tree/master/lsp
+-- conform: https://github.com/stevearc/conform.nvim/tree/master/lua/conform/formatters
+
 -- C++
 ensure_installed 'clangd'
 ensure_installed 'clang-format'
 vim.lsp.enable { 'clangd' }
 require('conform').formatters_by_ft.cpp = { 'clang-format' }
+
+-- CMake
+ensure_installed 'neocmakelsp'
+ensure_installed 'gersemi'
+vim.lsp.enable { 'neocmake' }
+require('conform').formatters_by_ft.cmake = { 'gersemi' }
 
 -- Json
 ensure_installed 'jq'
