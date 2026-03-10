@@ -40,6 +40,10 @@
       "rev": "5231c62aa83c2f8dc8e7ba957aa77098cda1257d",
       "src": "https://github.com/folke/lazydev.nvim"
     },
+    "lspkind.nvim": {
+      "rev": "c7274c48137396526b59d86232eabcdc7fed8a32",
+      "src": "https://github.com/onsails/lspkind.nvim"
+    },
     "markview.nvim": {
       "rev": "9e852c299351fc2110e763edc7fc899358ee112e",
       "src": "https://github.com/OXY2DEV/markview.nvim"
@@ -71,6 +75,10 @@
     "nvim-web-devicons": {
       "rev": "746ffbb17975ebd6c40142362eee1b0249969c5c",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
+    },
+    "oil.nvim": {
+      "rev": "0fcc83805ad11cf714a949c98c605ed717e0b83e",
+      "src": "https://github.com/stevearc/oil.nvim"
     },
     "onedark.nvim": {
       "rev": "213c23ae45a04797572242568d5d51937181792d",

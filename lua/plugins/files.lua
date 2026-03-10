@@ -1,15 +1,13 @@
-fzf = require("fzf-lua")
-require("yazi").setup(
-    {
-        open_for_directories = true,
-        integrations = {
-            grep_in_directory = "fzf-lua",
-            grep_in_selected_files = "fzf-lua"
-        }
-    }
-)
+fzf = require 'fzf-lua'
+require('yazi').setup {
+    open_for_directories = true,
+    integrations = {
+        grep_in_directory = 'fzf-lua',
+        grep_in_selected_files = 'fzf-lua',
+    },
+}
 vim.g.loaded_netrwPlugin = 1
 vim.keymap.set('n', '<leader>e', '<cmd>Yazi<CR>', { desc = 'Open File Browser' })
 
-require("grug-far").setup{}
+require('grug-far').setup {}
 vim.keymap.set('n', '<leader>fr', '<cmd>GrugFar<CR>', { desc = 'Find/Replace' })

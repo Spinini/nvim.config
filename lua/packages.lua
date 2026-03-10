@@ -3,11 +3,14 @@ vim.pack.add {
     { src = 'https://github.com/rebelot/kanagawa.nvim' },
     { src = 'https://github.com/navarasu/onedark.nvim' },
     { src = 'https://github.com/bluz71/vim-moonfly-colors' },
+    { src = 'https://github.com/nvim-tree/nvim-web-devicons' },
+    { src = 'https://github.com/onsails/lspkind.nvim' },
     -- Misc
     { src = 'https://github.com/nvim-mini/mini.nvim' },
     { src = 'https://github.com/NMAC427/guess-indent.nvim' },
     -- Find
     { src = 'https://github.com/mikavilpas/yazi.nvim' },
+    { src = 'https://github.com/stevearc/oil.nvim' },
     { src = 'https://github.com/nvim-lua/plenary.nvim' },
     { src = 'https://github.com/ibhagwan/fzf-lua' },
     { src = 'https://github.com/MagicDuck/grug-far.nvim' },

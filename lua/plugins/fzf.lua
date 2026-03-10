@@ -1,3 +1,8 @@
+require("fzf-lua").setup({
+    files = {
+        file_icons = "devicons"
+    }
+})
 vim.keymap.set("n", "<leader>ff", fzf.files, { desc = 'Files'})
 vim.keymap.set("n", "<leader>fg", fzf.live_grep, { desc = 'Live Grep'})
 vim.keymap.set("n", "<leader>fb", fzf.lgrep_curbuf, { desc = 'Live Grep Buffer'})
@@ -21,6 +26,5 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 -- Git Keymaps
---
 vim.keymap.set('n', '<leader>gs', '<cmd>FzfLua git_status<CR>', { desc = 'Git Status' })
 vim.keymap.set('n', '<leader>gb', '<cmd>FzfLua git_blame<CR>', { desc = 'Git Blame' })
