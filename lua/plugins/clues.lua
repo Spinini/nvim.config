@@ -3,15 +3,15 @@ local miniclue = require 'mini.clue'
 miniclue.setup {
     triggers = {
         { mode = { 'n', 'x' }, keys = '<Leader>' },
-        { mode = 'n',          keys = '[' },
-        { mode = 'n',          keys = ']' },
-        { mode = 'i',          keys = '<C-x>' },
+        { mode = 'n', keys = '[' },
+        { mode = 'n', keys = ']' },
+        { mode = 'i', keys = '<C-x>' },
         { mode = { 'n', 'x' }, keys = 'g' },
         { mode = { 'n', 'x' }, keys = "'" },
         { mode = { 'n', 'x' }, keys = '`' },
         { mode = { 'n', 'x' }, keys = '"' },
         { mode = { 'i', 'c' }, keys = '<C-r>' },
-        { mode = 'n',          keys = '<C-w>' },
+        { mode = 'n', keys = '<C-w>' },
         { mode = { 'n', 'x' }, keys = 'z' },
     },
     clues = {
@@ -30,5 +30,5 @@ miniclue.setup {
     },
     window = {
         delay = 400,
-    }
+    },
 }

@@ -1,8 +1,8 @@
-require("plugins.clues")
-require("plugins.files")
-require("plugins.fzf")
-require("plugins.git")
-require("plugins.icons")
-require("plugins.lang")
-require("plugins.ui")
-require("plugins.theme")
+require 'plugins.clues'
+require 'plugins.files'
+require 'plugins.fzf'
+require 'plugins.git'
+require 'plugins.icons'
+require 'plugins.lang'
+require 'plugins.ui'
+require 'plugins.theme'

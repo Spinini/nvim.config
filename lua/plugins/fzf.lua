@@ -1,13 +1,13 @@
-require("fzf-lua").setup({
+require('fzf-lua').setup {
     files = {
-        file_icons = "devicons"
-    }
-})
-vim.keymap.set("n", "<leader>ff", fzf.files, { desc = 'Files'})
-vim.keymap.set("n", "<leader>fg", fzf.live_grep, { desc = 'Live Grep'})
-vim.keymap.set("n", "<leader>fb", fzf.lgrep_curbuf, { desc = 'Live Grep Buffer'})
-vim.keymap.set("n", "<leader>b", fzf.buffers, { desc = 'Buffers'})
-vim.keymap.set("n", "<leader>fh", fzf.help_tags, { desc = 'Help Tags'})
+        file_icons = 'devicons',
+    },
+}
+vim.keymap.set('n', '<leader>ff', fzf.files, { desc = 'Files' })
+vim.keymap.set('n', '<leader>fg', fzf.live_grep, { desc = 'Live Grep' })
+vim.keymap.set('n', '<leader>fb', fzf.lgrep_curbuf, { desc = 'Live Grep Buffer' })
+vim.keymap.set('n', '<leader>b', fzf.buffers, { desc = 'Buffers' })
+vim.keymap.set('n', '<leader>fh', fzf.help_tags, { desc = 'Help Tags' })
 
 -- LSP Keymaps
 vim.api.nvim_create_autocmd('LspAttach', {
