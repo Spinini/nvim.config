@@ -18,6 +18,9 @@ vim.pack.add {
     { src = 'https://github.com/saghen/blink.cmp' },
     { src = 'https://github.com/stevearc/conform.nvim' },
     { src = 'https://github.com/linux-cultist/venv-selector.nvim' },
+    -- Snippets
+    { src = 'https://github.com/L3MON4D3/LuaSnip' },
+    { src = 'https://github.com/rafamadriz/friendly-snippets' },
     -- Treesitter
     {
         src = 'https://github.com/nvim-treesitter/nvim-treesitter',

@@ -17,7 +17,8 @@ end
 require('guess-indent').setup {}
 require('conform').setup {}
 
-require 'plugins.lang.tools'
 require 'plugins.lang.blink'
-require 'plugins.lang.treesitter'
 require 'plugins.lang.keymaps'
+require 'plugins.lang.snippets'
+require 'plugins.lang.tools'
+require 'plugins.lang.treesitter'
