@@ -64,8 +64,10 @@ ensure_installed 'sqlfmt'
 require('conform').formatters_by_ft.sql = { 'sqlfmt' }
 
 -- Terraform
+ensure_installed 'terraform'
 ensure_installed 'terraform-ls'
 vim.lsp.enable { 'terraformls' }
+require('conform').formatters_by_ft.terraform = { 'terraform_fmt' }
 
 -- Web
 ensure_installed 'typescript-language-server'
