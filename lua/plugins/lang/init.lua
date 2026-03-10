@@ -14,12 +14,10 @@ ensure_installed = function(package_name)
     if not registry.is_installed(package_name) then vim.cmd('MasonInstall ' .. package_name) end
 end
 
-require('blink-cmp').setup {
-    fuzzy = { implementation = 'lua' },
-}
 require('guess-indent').setup {}
 require('conform').setup {}
 
 require 'plugins.lang.tools'
+require 'plugins.lang.blink'
 require 'plugins.lang.treesitter'
 require 'plugins.lang.keymaps'
