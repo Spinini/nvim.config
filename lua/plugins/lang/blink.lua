@@ -6,6 +6,9 @@ require('blink-cmp').setup {
         default = { 'lsp', 'path', 'snippets', 'buffer' },
     },
     completion = {
+        -- documentation = {
+        --     auto_show = true,
+        -- },
         trigger = {
             show_on_trigger_character = true,
             show_on_blocked_trigger_characters = { ' ', '\n', '\t' },
