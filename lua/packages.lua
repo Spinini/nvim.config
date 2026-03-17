@@ -33,6 +33,7 @@ vim.pack.add {
     { src = 'https://github.com/RRethy/vim-illuminate' },
     -- Git
     { src = 'https://github.com/lewis6991/gitsigns.nvim' },
+    { src = 'https://github.com/neogitorg/neogit' },
     -- MD
     { src = 'https://github.com/OXY2DEV/markview.nvim' },
 }
