@@ -1,10 +1,13 @@
 vim.pack.add {
     -- Theme
     { src = 'https://github.com/rebelot/kanagawa.nvim' },
+    { src = 'https://github.com/scottmckendry/cyberdream.nvim' },
     { src = 'https://github.com/navarasu/onedark.nvim' },
     { src = 'https://github.com/bluz71/vim-moonfly-colors' },
+    { src = 'https://github.com/vague-theme/vague.nvim' },
+    { src = 'https://github.com/savq/melange-nvim' },
+    { src = 'https://github.com/loctvl842/monokai-pro.nvim'},
     { src = 'https://github.com/nvim-tree/nvim-web-devicons' },
-    { src = 'https://github.com/onsails/lspkind.nvim' },
     -- Misc
     { src = 'https://github.com/nvim-mini/mini.nvim' },
     { src = 'https://github.com/NMAC427/guess-indent.nvim' },
@@ -21,6 +24,7 @@ vim.pack.add {
     { src = 'https://github.com/saghen/blink.cmp' },
     { src = 'https://github.com/stevearc/conform.nvim' },
     { src = 'https://github.com/linux-cultist/venv-selector.nvim' },
+    { src = 'https://github.com/onsails/lspkind.nvim' },
     -- Snippets
     { src = 'https://github.com/L3MON4D3/LuaSnip' },
     { src = 'https://github.com/rafamadriz/friendly-snippets' },
