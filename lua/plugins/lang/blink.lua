@@ -1,6 +1,6 @@
 require('blink-cmp').setup {
     fuzzy = { implementation = 'lua' },
-    ghost_text = { enabled = true },
+    -- ghost_text = { enabled = true },
     snippets = { preset = 'luasnip' },
     sources = {
         default = { 'lsp', 'path', 'snippets', 'buffer' },
