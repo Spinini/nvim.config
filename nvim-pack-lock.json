@@ -8,9 +8,21 @@
       "rev": "d1c0d6a65dc33ff4f3e31bd93f5c0d23bd55ce8a",
       "src": "https://github.com/saghen/blink.cmp"
     },
+    "codecompanion.nvim": {
+      "rev": "bc82fbca915f28467a2e2e74e11845ce20d8017c",
+      "src": "https://github.com/olimorris/codecompanion.nvim"
+    },
     "conform.nvim": {
       "rev": "086a40dc7ed8242c03be9f47fbcee68699cc2395",
       "src": "https://github.com/stevearc/conform.nvim"
+    },
+    "copilot.lua": {
+      "rev": "adff470bca742b7658228ed144589250ecb3dc0a",
+      "src": "https://github.com/zbirenbaum/copilot.lua"
+    },
+    "copilot.vim": {
+      "rev": "a12fd5672110c8aa7e3c8419e28c96943ca179be",
+      "src": "https://github.com/github/copilot.vim"
     },
     "cyberdream.nvim": {
       "rev": "a68ffa6af98bf1fc88f33a071c51a188ec85c725",

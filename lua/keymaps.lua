@@ -2,6 +2,8 @@
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<leader>w', ':write<CR>', { desc = 'Write' })
 vim.keymap.set('n', '<leader>q', ':quit<CR>', { desc = 'Quit' })
+vim.keymap.set('n', '<leader>tv', ':vsplit<CR>', { desc = 'Vertical Split'})
+vim.keymap.set('n', '<leader>th', ':split<CR>', { desc = 'Horizontal Split'})
 
 -- Window Nav
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })

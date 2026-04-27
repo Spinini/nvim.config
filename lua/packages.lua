@@ -6,7 +6,7 @@ vim.pack.add {
     { src = 'https://github.com/bluz71/vim-moonfly-colors' },
     { src = 'https://github.com/vague-theme/vague.nvim' },
     { src = 'https://github.com/savq/melange-nvim' },
-    { src = 'https://github.com/loctvl842/monokai-pro.nvim'},
+    { src = 'https://github.com/loctvl842/monokai-pro.nvim' },
     { src = 'https://github.com/nvim-tree/nvim-web-devicons' },
     -- Misc
     { src = 'https://github.com/nvim-mini/mini.nvim' },
@@ -40,4 +40,7 @@ vim.pack.add {
     { src = 'https://github.com/neogitorg/neogit' },
     -- MD
     { src = 'https://github.com/OXY2DEV/markview.nvim' },
+    -- AI
+    { src = 'https://github.com/olimorris/codecompanion.nvim' },
+    { src = 'https://github.com/zbirenbaum/copilot.lua' },
 }
