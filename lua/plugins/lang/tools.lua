@@ -32,7 +32,8 @@ require('lazydev').setup {}
 
 -- Markdown
 require('render-markdown').setup {
-    ft = { 'markdown', 'codecompanion' },
+    enabled = true,
+    file_types = { 'markdown', 'codecompanion' },
 }
 
 -- Python
