@@ -31,14 +31,9 @@ require('conform').formatters_by_ft.lua = { 'stylua' }
 require('lazydev').setup {}
 
 -- Markdown
-require('markview').setup {
-    preview = { enable = false },
+require('render-markdown').setup {
+    ft = { 'markdown', 'codecompanion' },
 }
-
-vim.api.nvim_create_autocmd('FileType', {
-    pattern = { 'markdown' },
-    callback = function() vim.keymap.set('n', '<leader>m', '<Cmd>Markview<CR>', { buffer = true, desc = 'Toggle Markview' }) end,
-})
 
 -- Python
 ensure_installed 'ruff'

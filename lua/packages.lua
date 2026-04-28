@@ -39,7 +39,7 @@ vim.pack.add {
     { src = 'https://github.com/lewis6991/gitsigns.nvim' },
     { src = 'https://github.com/neogitorg/neogit' },
     -- MD
-    { src = 'https://github.com/OXY2DEV/markview.nvim' },
+    { src = 'https://github.com/MeanderingProgrammer/render-markdown.nvim' },
     -- AI
     { src = 'https://github.com/olimorris/codecompanion.nvim' },
     { src = 'https://github.com/zbirenbaum/copilot.lua' },
