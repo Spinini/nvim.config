@@ -1,4 +1,4 @@
-require("packages")
-require("settings")
-require("plugins")
-require("keymaps")
+require 'packages'
+require 'settings'
+require 'plugins'
+require 'keymaps'
