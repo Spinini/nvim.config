@@ -11,6 +11,7 @@ vim.pack.add {
     -- Misc
     { src = 'https://github.com/nvim-mini/mini.nvim' },
     { src = 'https://github.com/NMAC427/guess-indent.nvim' },
+    { src = 'https://github.com/nvim-lualine/lualine.nvim' },
     -- Find
     { src = 'https://github.com/mikavilpas/yazi.nvim' },
     { src = 'https://github.com/stevearc/oil.nvim' },
