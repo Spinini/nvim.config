@@ -8,6 +8,9 @@ vim.pack.add {
     { src = 'https://github.com/savq/melange-nvim' },
     { src = 'https://github.com/loctvl842/monokai-pro.nvim' },
     { src = 'https://github.com/nvim-tree/nvim-web-devicons' },
+    { src = 'https://github.com/ellisonleao/gruvbox.nvim' },
+    { src = 'https://github.com/tiagovla/tokyodark.nvim' },
+    { src = 'https://github.com/folke/tokyonight.nvim' },
     -- Misc
     { src = 'https://github.com/nvim-mini/mini.nvim' },
     { src = 'https://github.com/NMAC427/guess-indent.nvim' },
