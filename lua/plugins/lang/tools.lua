@@ -39,8 +39,9 @@ require('render-markdown').setup {
 -- Python
 ensure_installed 'ruff'
 ensure_installed 'basedpyright'
+ensure_installed 'ty'
 
-vim.lsp.enable { 'basedpyright' }
+vim.lsp.enable { 'ty' }
 require('conform').formatters_by_ft.python = { 'ruff_format', 'ruff_fix' }
 
 require('venv-selector').setup()
