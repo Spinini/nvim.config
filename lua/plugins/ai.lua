@@ -3,7 +3,6 @@ require('codecompanion').setup {
     interactions = {
         chat = {
             adapter = 'copilot',
-            model = 'claude-sonnet-4.6',
         },
         inline = {
             adapter = 'copilot',
