@@ -12,4 +12,5 @@ local conform = require 'conform'
 local format_with_fallback = function() conform.format { lsp_format = 'fallback' } end
 
 vim.keymap.set('n', '<leader>pm', '<cmd>Mason<CR>', { desc = 'Mason' })
+vim.keymap.set('n', 'gl', vim.diagnostic.open_float)
 vim.keymap.set({ 'n', 'x' }, 'gq', format_with_fallback, { desc = 'Conform Format' })
