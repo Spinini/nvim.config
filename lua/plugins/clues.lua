@@ -21,6 +21,7 @@ miniclue.setup {
         { mode = 'n', keys = '<Leader>g', desc = '+Git' },
         { mode = 'n', keys = '<Leader>l', desc = '+LSP' },
         { mode = 'n', keys = '<Leader>p', desc = '+Packages' },
+        { mode = 'n', keys = '<Leader>s', desc = '+Settings' },
         { mode = 'n', keys = '<Leader>t', desc = '+Tabs' },
         miniclue.gen_clues.square_brackets(),
         miniclue.gen_clues.builtin_completion(),

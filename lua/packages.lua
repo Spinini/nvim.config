@@ -48,4 +48,5 @@ vim.pack.add {
     -- AI
     { src = 'https://github.com/olimorris/codecompanion.nvim' },
     { src = 'https://github.com/zbirenbaum/copilot.lua' },
+    { src = 'https://github.com/copilotlsp-nvim/copilot-lsp' },
 }

@@ -28,3 +28,4 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- Git Keymaps
 vim.keymap.set('n', '<leader>gs', '<cmd>FzfLua git_status<CR>', { desc = 'Git Status' })
 vim.keymap.set('n', '<leader>gb', '<cmd>FzfLua git_blame<CR>', { desc = 'Git Blame' })
+vim.keymap.set('n', '<leader>sk', '<Cmd>FzfLua keymaps<CR>', { desc = 'Explore Keymaps'})

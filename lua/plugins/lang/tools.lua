@@ -13,6 +13,10 @@ ensure_installed 'gersemi'
 vim.lsp.enable { 'neocmake' }
 require('conform').formatters_by_ft.cmake = { 'gersemi' }
 
+-- Copilot
+ensure_installed 'copilot-language-server'
+vim.lsp.enable { 'copilot' }
+
 -- Docker
 ensure_installed 'docker-language-server'
 vim.lsp.enable { 'docker_language_server' }
