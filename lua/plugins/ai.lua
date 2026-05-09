@@ -2,11 +2,17 @@ cp = require 'copilot'
 cp.setup {
     panel = {
         layout = {
-            position = 'bottom', -- | top | left | right | bottom |
+            position = 'bottom',
             ratio = 0.2,
         },
     },
-    -- nes = { enabled = true, auto_trigger = true },
+    suggestion = {
+        keymap = {
+            accept = '<C-l>',
+            next = '<C-n>',
+            prev = '<C-p>',
+        },
+    },
 }
 
 pa = require 'copilot.panel'
@@ -25,3 +31,19 @@ vim.api.nvim_create_autocmd('User', {
     pattern = 'BlinkCmpMenuClose',
     callback = function() vim.b.copilot_suggestion_hidden = false end,
 })
+
+-- Setup Code Companion with Copilot adapter
+require('codecompanion').setup {
+    interactions = {
+        chat = {
+            adapter = 'copilot',
+        },
+        inline = {
+            adapter = 'copilot',
+        },
+        cmd = {
+            adapter = 'copilot',
+        },
+    },
+}
+vim.keymap.set('n', '<leader>ac', '<cmd>CodeCompanionChat Toggle<CR>', { desc = 'Toggle AI Chat' })
