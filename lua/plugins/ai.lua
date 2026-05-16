@@ -6,13 +6,7 @@ cp.setup {
             ratio = 0.2,
         },
     },
-    suggestion = {
-        keymap = {
-            accept = '<C-l>',
-            next = '<C-n>',
-            prev = '<C-p>',
-        },
-    },
+    suggestion = {},
 }
 
 pa = require 'copilot.panel'
@@ -21,6 +15,10 @@ ne = require 'copilot.nes'
 
 vim.keymap.set('n', '<leader>ap', pa.toggle, { desc = 'Toggle Panel' })
 vim.keymap.set('n', '<leader>as', su.toggle_auto_trigger, { desc = 'Toggle Suggestions' })
+
+vim.keymap.set('i', '<C-l>', su.accept, { desc = 'Accept Suggestion' })
+vim.keymap.set('i', '<C-p>', su.prev, { desc = 'Previous Suggestion' })
+vim.keymap.set('i', '<C-n>', su.next, { desc = 'Next Suggestion' })
 
 -- Hide/show suggestions if blink is open/close
 vim.api.nvim_create_autocmd('User', {

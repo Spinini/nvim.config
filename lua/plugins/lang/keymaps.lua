@@ -9,7 +9,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end,
 })
 local conform = require 'conform'
-local format_with_fallback = function() conform.format { lsp_format = 'fallback' } end
+local format_with_fallback = function()
+    conform.format { lsp_format = 'fallback' }
+    vim.cmd 'GuessIndent silent'
+end
 
 vim.keymap.set('n', '<leader>pm', '<cmd>Mason<CR>', { desc = 'Mason' })
 vim.keymap.set('n', 'gl', vim.diagnostic.open_float)
