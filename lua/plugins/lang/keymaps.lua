@@ -5,7 +5,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
         bufmap('n', '<leader>lf', vim.lsp.buf.format, 'LSP Format')
         bufmap('n', '<leader>lr', vim.lsp.buf.rename, 'Rename Symbol')
         bufmap('n', 'gd', vim.lsp.buf.definition, '(LSP) Go To Definition')
-        bufmap('n', 'grd', vim.lsp.buf.declaration, '(LSP) Go To Declaraction')
+        bufmap('n', 'gi', vim.lsp.buf.implementation, '(LSP) Go To Implementation')
+        bufmap('n', 'gy', vim.lsp.buf.type_definition, '(LSP) Go To Type Definition')
+        bufmap('n', 'gD', vim.lsp.buf.declaration, '(LSP) Go To Declaraction')
+        bufmap('n', 'K', function() return vim.lsp.buf.hover() end, '(LSP) Hover')
+        bufmap('n', 'gK', function() return vim.lsp.buf.signature_help() end, '(LSP) Signature Help')
     end,
 })
 local conform = require 'conform'
