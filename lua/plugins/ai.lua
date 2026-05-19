@@ -21,14 +21,14 @@ vim.keymap.set('i', '<C-p>', su.prev, { desc = 'Previous Suggestion' })
 vim.keymap.set('i', '<C-n>', su.next, { desc = 'Next Suggestion' })
 
 -- Hide/show suggestions if blink is open/close
-vim.api.nvim_create_autocmd('User', {
-    pattern = 'BlinkCmpMenuOpen',
-    callback = function() vim.b.copilot_suggestion_hidden = true end,
-})
-vim.api.nvim_create_autocmd('User', {
-    pattern = 'BlinkCmpMenuClose',
-    callback = function() vim.b.copilot_suggestion_hidden = false end,
-})
+-- vim.api.nvim_create_autocmd('User', {
+--     pattern = 'BlinkCmpMenuOpen',
+--     callback = function() vim.b.copilot_suggestion_hidden = true end,
+-- })
+-- vim.api.nvim_create_autocmd('User', {
+--     pattern = 'BlinkCmpMenuClose',
+--     callback = function() vim.b.copilot_suggestion_hidden = false end,
+-- })
 
 -- Setup Code Companion with Copilot adapter
 require('codecompanion').setup {
