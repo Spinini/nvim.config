@@ -46,7 +46,16 @@ ensure_installed 'basedpyright'
 ensure_installed 'pyrefly'
 ensure_installed 'ty'
 
-vim.lsp.enable { 'pyrefly' }
+vim.lsp.config['basedpyright'] = {
+    settings = {
+        basedpyright = {
+            analysis = {
+                typeCheckingMode = 'standard',
+            },
+        },
+    },
+}
+vim.lsp.enable { 'basedpyright' }
 require('conform').formatters_by_ft.python = { 'ruff_format', 'ruff_fix' }
 
 require('venv-selector').setup()
