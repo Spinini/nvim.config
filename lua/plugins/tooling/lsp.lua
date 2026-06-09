@@ -72,6 +72,8 @@ local servers = {
   terraformls = {},
   -- Typescript
   tsgo = {},
+  -- Zig
+  zls = {}
 }
 
 local ensure_installed = vim.tbl_keys(servers or {})

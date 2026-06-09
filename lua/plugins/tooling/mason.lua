@@ -37,6 +37,8 @@ require('mason-tool-installer').setup {
     'prettierd',
     -- YAML
     'yq',
+    -- Zig
+    'zls',
   },
 }
 
