@@ -36,7 +36,7 @@ require('mason-tool-installer').setup {
     'tsgo',
     'prettierd',
     -- YAML
-    'yq'
+    'yq',
   },
 }
 
