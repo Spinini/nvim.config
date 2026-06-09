@@ -56,15 +56,16 @@ local servers = {
     },
   },
   -- Python
-  basedpyright = {
-    settings = {
-      basedpyright = {
-        analysis = {
-          typeCheckingMode = 'standard',
-        },
-      },
-    },
-  },
+  -- basedpyright = {
+  --   settings = {
+  --     basedpyright = {
+  --       analysis = {
+  --         typeCheckingMode = 'standard',
+  --       },
+  --     },
+  --   },
+  -- },
+  ty = {},
   -- Rust
   rust_analyzer = {},
   -- Terraform
