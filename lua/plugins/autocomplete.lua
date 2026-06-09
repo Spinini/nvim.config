@@ -3,7 +3,7 @@ require('blink.cmp').setup {
   keymap = {
     ['<C-space>'] = {},
     ['<C-p>'] = {},
-    ['<Tab>'] = { 'accept' },
+    ['<Tab>'] = { 'accept', 'fallback' },
     ['<S-Tab>'] = {},
     ['<C-y>'] = { 'show', 'show_documentation', 'hide_documentation' },
     ['<C-n>'] = { 'select_and_accept' },

@@ -5,15 +5,8 @@ function gh(repo) return 'https://github.com/' .. repo end
 -- Load theme first
 require 'plugins/theme'
 -- Load Mason and install required tools
-require 'plugins/mason'
--- Activate LSP servers
-require 'plugins/lsp'
--- Activate Formatters
-require 'plugins/format'
--- Activate Linters
-require 'plugins/lint'
+require 'plugins/tooling'
 -- Load remaining Plugins
-require 'plugins/misc'
 require 'plugins/autocomplete'
 require 'plugins/debug'
 require 'plugins/mini-cfg'

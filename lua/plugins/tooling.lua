@@ -1,0 +1,5 @@
+require 'plugins/tooling/mason'
+require 'plugins/tooling/format'
+require 'plugins/tooling/lint'
+require 'plugins/tooling/lsp'
+require 'plugins/tooling/misc'

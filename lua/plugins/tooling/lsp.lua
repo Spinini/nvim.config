@@ -25,6 +25,8 @@ vim.pack.add {
 }
 
 local servers = {
+  -- C/C++
+  clangd = {},
   -- Lua
   lua_ls = {
     on_init = function(client)
@@ -67,6 +69,8 @@ local servers = {
   rust_analyzer = {},
   -- Terraform
   terraformls = {},
+  -- Typescript
+  tsgo = {},
 }
 
 local ensure_installed = vim.tbl_keys(servers or {})
