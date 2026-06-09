@@ -10,6 +10,7 @@ require 'plugins/tooling'
 
 -- Load remaining Plugins
 require 'plugins/autocomplete'
+require 'plugins/ai'
 require 'plugins/debug'
 require 'plugins/mini-cfg'
 require 'plugins/files'

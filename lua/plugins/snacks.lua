@@ -1,7 +1,15 @@
 vim.pack.add { gh 'folke/snacks.nvim', gh 'nvim-lua/plenary.nvim' }
 
 Snacks = require 'snacks'
-Snacks.setup {}
+Snacks.setup {
+  picker = {
+    sources = {
+      files = { hidden = true },
+      grep = { hidden = true },
+      explore = { hidden = true },
+    },
+  },
+}
 
 -- Scratchpad
 vim.keymap.set('n', '<leader>.', function() Snacks.scratch() end, { desc = 'Toggle Scratch Buffer' })
