@@ -65,6 +65,8 @@ local servers = {
   },
   -- Rust
   rust_analyzer = {},
+  -- Terraform
+  terraformls = {},
 }
 
 local ensure_installed = vim.tbl_keys(servers or {})

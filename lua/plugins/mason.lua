@@ -17,6 +17,8 @@ require('mason-tool-installer').setup {
         -- Rust
         'rust-analyzer',
         -- Terraform
+        'terraform',
+        'terraform-ls',
         'tflint',
     },
 }
