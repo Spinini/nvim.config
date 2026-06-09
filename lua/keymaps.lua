@@ -34,6 +34,7 @@ vim.keymap.set('n', '<leader>q', ':quit<CR>', { desc = 'Quit' })
 -- Update Pack.
 vim.keymap.set('n', '<leader>pu', vim.pack.update, { desc = 'Vim Pack Update' })
 
+-- Toggle diagnostics
 vim.keymap.set("n", "<leader>td", function()
   vim.diagnostic.enable(not vim.diagnostic.is_enabled())
 end, { desc = "Toggle diagnostics" })
