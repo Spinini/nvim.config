@@ -37,6 +37,7 @@ require('conform').setup {
     terraform = { 'terraform_fmt' },
     typescript = { 'prettierd' },
     yaml = { 'yq' },
+    zig = { 'zigfmt' },
   },
 }
 
