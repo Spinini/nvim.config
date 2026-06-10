@@ -25,6 +25,8 @@ vim.pack.add {
 }
 
 local servers = {
+  -- Bash
+  bashls = {},
   -- C/C++
   clangd = {},
   -- Lua

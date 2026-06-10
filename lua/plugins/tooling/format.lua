@@ -24,6 +24,8 @@ require('conform').setup {
   },
   -- You can also specify external formatters in here.
   formatters_by_ft = {
+    sh = { 'beautysh' },
+    bash = { 'beautysh' },
     c = { 'clang-format' },
     cpp = { 'clang-format' },
     cmake = { 'gersemi' },

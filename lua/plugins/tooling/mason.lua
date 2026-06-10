@@ -6,6 +6,9 @@ vim.pack.add {
 require('mason').setup {}
 require('mason-tool-installer').setup {
   ensure_installed = {
+    -- Bash
+    'bash-language-server',
+    'beautysh',
     -- C/C++
     'clangd',
     'clang-format',
