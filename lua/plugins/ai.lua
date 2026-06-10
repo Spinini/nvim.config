@@ -15,15 +15,6 @@ require('copilot').setup {
       dismiss = '<C-h>',
     },
   },
-  nes = {
-    enabled = true,
-    auto_trigger = true,
-    keymap = {
-      accept_and_goto = false,
-      accept = false,
-      dismiss = false,
-    },
-  },
   panel = { enabled = false },
 }
 
