@@ -42,20 +42,22 @@ require('codecompanion').setup {
     },
   },
 }
+-- Show chat
 vim.keymap.set('n', '<leader>ac', '<cmd>CodeCompanionChat Toggle<cr>', { desc = 'Toggle AI Chat' })
 
+-- Add selection to chat
 vim.keymap.set('v', '<leader>aa', '<cmd>CodeCompanionChat Add<cr>', { desc = 'Add selection to chat' })
 
+-- Inline prompt
 vim.keymap.set('n', '<leader>ai', '<cmd>CodeCompanion<cr>', { desc = 'Inline prompt' })
 
 local function inline_prompt()
-  vim.ui.input({
-    prompt = 'CodeCompanion: ',
-  }, function(input)
-    if input and input ~= '' then vim.cmd("'<,'>CodeCompanion " .. input) end
+  vim.ui.input({ prompt = 'Prompt ' }, function(input)
+    vim.cmd("CodeCompanion " .. input)
   end)
 end
 
+-- Prompt about visual selection
 vim.keymap.set('v', '<leader>ap', inline_prompt, {
   desc = 'Custom AI prompt',
 })
