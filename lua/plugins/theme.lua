@@ -1,2 +1,3 @@
-vim.pack.add { gh 'nyoom-engineering/oxocarbon.nvim'}
-vim.cmd.colorscheme 'oxocarbon'
+vim.pack.add { gh 'catppuccin/nvim' }
+vim.pack.add { gh 'vague-theme/vague.nvim' }
+vim.cmd.colorscheme 'vague'
