@@ -29,7 +29,7 @@ require('blink.cmp').setup {
     },
   },
   sources = {
-    default = { 'lsp', 'path', 'snippets', 'buffer' },
+    default = { 'lsp', 'path', 'snippets', 'buffer', 'codecompanion' },
   },
   snippets = { preset = 'luasnip' },
   fuzzy = { implementation = 'lua' },

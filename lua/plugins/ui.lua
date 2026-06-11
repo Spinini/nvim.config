@@ -26,3 +26,11 @@ require('which-key').setup {
     { 'gr', group = 'LSP Actions', mode = { 'n' } },
   },
 }
+
+-- LSP messages in lower right corner
+vim.pack.add { gh 'j-hui/fidget.nvim' }
+require('fidget').setup {
+  notification = {
+    override_vim_notify = true,
+  },
+}
