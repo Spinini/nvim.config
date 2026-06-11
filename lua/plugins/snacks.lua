@@ -8,6 +8,7 @@ Snacks.setup {
       grep = { hidden = true },
       explore = { hidden = true },
     },
+    ui_select = true,
   },
 }
 
@@ -29,7 +30,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('snacks-lsp-attach', { clear = true }),
   callback = function(event)
     local buf = event.buf
+    -- Show the definition of the word under your cursor.
     vim.keymap.set('n', 'gd', Snacks.picker.lsp_definitions, { buffer = buf, desc = '[G]oto [D]efinition]'})
+    -- Show the type declaration of the word under your cursor.
     vim.keymap.set('n', 'gD', Snacks.picker.lsp_declarations, { buffer = buf, desc = '[G]oto [D]eclaration]'})
     -- Find references for the word under your cursor.
     vim.keymap.set('n', 'grr', Snacks.picker.lsp_references, { buffer = buf, desc = '[G]oto [R]eferences' })

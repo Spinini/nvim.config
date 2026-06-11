@@ -7,9 +7,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
     map('grn', vim.lsp.buf.rename, '[R]e[n]ame')
     map('gra', vim.lsp.buf.code_action, '[G]oto Code [A]ction', { 'n', 'x' })
-    -- Definition/declaration done instead by Snacks
-    -- map('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
-    -- map('grD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
     if client and client:supports_method('textDocument/inlayHint', event.buf) then
       map('<leader>th', function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf }) end, '[T]oggle Inlay [H]ints')
