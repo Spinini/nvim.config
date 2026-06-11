@@ -1,3 +1,2 @@
-vim.pack.add { gh 'EdenEast/nightfox.nvim' }
-require('nightfox').setup {}
-vim.cmd.colorscheme 'carbonfox'
+vim.pack.add { gh 'nyoom-engineering/oxocarbon.nvim'}
+vim.cmd.colorscheme 'oxocarbon'
