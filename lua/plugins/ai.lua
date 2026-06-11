@@ -7,7 +7,7 @@ local ai_plugins = {
 vim.pack.add(ai_plugins)
 
 local ADAPTER = 'copilot'
-local SUGGESTION_MODEL = vim.env.NVIM_SUGGESTION_MODEL or 'claude-haiku-4.5'
+local SUGGESTION_MODEL = vim.env.NVIM_SUGGESTION_MODEL or 'gpt-41-copilot'
 -- local CHAT_MODEL = vim.env.NVIM_CHAT_MODEL or 'claude-haiku-4.5'
 -- local INLINE_MODEL = vim.env.NVIM_INLINE_MODEL or 'claude-haiku-4.5'
 -- local CMD_MODEL = vim.env.NVIM_CMD_MODEL or 'claude-haiku-4.5'
