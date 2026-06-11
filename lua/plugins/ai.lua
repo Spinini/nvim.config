@@ -58,6 +58,6 @@ local function inline_prompt()
 end
 
 -- Prompt about visual selection
-vim.keymap.set('v', '<leader>ap', inline_prompt, {
+vim.keymap.set('v', '<leader>ai', inline_prompt, {
   desc = 'Custom AI prompt',
 })
