@@ -6,6 +6,13 @@ local ai_plugins = {
 }
 vim.pack.add(ai_plugins)
 
+local ADAPTER = 'copilot'
+local SUGGESTION_MODEL = vim.env.NVIM_SUGGESTION_MODEL or 'claude-haiku-4.5'
+-- local CHAT_MODEL = vim.env.NVIM_CHAT_MODEL or 'claude-haiku-4.5'
+-- local INLINE_MODEL = vim.env.NVIM_INLINE_MODEL or 'claude-haiku-4.5'
+-- local CMD_MODEL = vim.env.NVIM_CMD_MODEL or 'claude-haiku-4.5'
+-- local BACKGROUND_MODEL = vim.env.NVIM_BACKGROUND_MODEL or 'claude-haiku-4.5'
+
 require('copilot').setup {
   suggestion = {
     enabled = true,
@@ -17,6 +24,7 @@ require('copilot').setup {
     },
   },
   panel = { enabled = false },
+  copilot_model = SUGGESTION_MODEL,
 }
 local suggestion = require 'copilot.suggestion'
 vim.keymap.set('n', '<leader>at', function() suggestion.toggle_auto_trigger() end, { desc = 'Toggle Copilot suggestions' })
@@ -24,13 +32,16 @@ vim.keymap.set('n', '<leader>at', function() suggestion.toggle_auto_trigger() en
 require('codecompanion').setup {
   strategies = {
     chat = {
-      adapter = 'copilot',
+      adapter = ADAPTER,
     },
     inline = {
-      adapter = 'copilot',
+      adapter = ADAPTER,
     },
     cmd = {
-      adapter = 'copilot',
+      adapter = ADAPTER,
+    },
+    background = {
+      adapter = ADAPTER,
     },
   },
   display = {
@@ -52,9 +63,7 @@ vim.keymap.set('v', '<leader>aa', '<cmd>CodeCompanionChat Add<cr>', { desc = 'Ad
 vim.keymap.set('n', '<leader>ai', '<cmd>CodeCompanion<cr>', { desc = 'Inline prompt' })
 
 local function inline_prompt()
-  vim.ui.input({ prompt = 'Prompt ' }, function(input)
-    vim.cmd("CodeCompanion " .. input)
-  end)
+  vim.ui.input({ prompt = 'Prompt ' }, function(input) vim.cmd('CodeCompanion ' .. input) end)
 end
 
 -- Prompt about visual selection
