@@ -5,4 +5,3 @@ Requirements
 - git
 - rg
 - treesitter-cli
-- yazi

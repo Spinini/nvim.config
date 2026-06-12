@@ -1,16 +1,34 @@
 vim.pack.add { gh 'folke/snacks.nvim', gh 'nvim-lua/plenary.nvim' }
 
 Snacks = require 'snacks'
+
+-- Disable netrw, we want Snacks Explorer instead
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- Setup Snacks
 Snacks.setup {
+  explorer = {
+    replace_netrw = true,
+  },
   picker = {
     sources = {
       files = { hidden = true },
       grep = { hidden = true },
       explore = { hidden = true },
+      explorer = {
+        auto_close = true,
+        layout = {
+          preset = 'dropdown',
+        },
+      },
     },
     ui_select = true,
   },
 }
+
+-- Keybind to open explorer
+vim.keymap.set('n', '\\', function() Snacks.explorer {} end)
 
 -- Scratchpad
 vim.keymap.set('n', '<leader>.', function() Snacks.scratch() end, { desc = 'Toggle Scratch Buffer' })
@@ -31,9 +49,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(event)
     local buf = event.buf
     -- Show the definition of the word under your cursor.
-    vim.keymap.set('n', 'gd', Snacks.picker.lsp_definitions, { buffer = buf, desc = '[G]oto [D]efinition]'})
+    vim.keymap.set('n', 'gd', Snacks.picker.lsp_definitions, { buffer = buf, desc = '[G]oto [D]efinition]' })
     -- Show the type declaration of the word under your cursor.
-    vim.keymap.set('n', 'gD', Snacks.picker.lsp_declarations, { buffer = buf, desc = '[G]oto [D]eclaration]'})
+    vim.keymap.set('n', 'gD', Snacks.picker.lsp_declarations, { buffer = buf, desc = '[G]oto [D]eclaration]' })
     -- Find references for the word under your cursor.
     vim.keymap.set('n', 'grr', Snacks.picker.lsp_references, { buffer = buf, desc = '[G]oto [R]eferences' })
     -- Jump to the implementation of the word under your cursor.
