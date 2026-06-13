@@ -41,6 +41,7 @@ vim.o.splitbelow = true
 
 -- List space/tab/... characters
 vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
 vim.o.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
