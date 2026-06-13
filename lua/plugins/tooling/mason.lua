@@ -31,6 +31,8 @@ require('mason-tool-installer').setup {
     'rust-analyzer',
     -- SQL
     'sqlfmt',
+    -- Svelte
+    'svelte-language-server',
     -- Terraform
     'terraform',
     'terraform-ls',

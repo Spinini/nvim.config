@@ -62,6 +62,8 @@ local servers = {
   ty = {},
   -- Rust
   rust_analyzer = {},
+  -- Svelte
+  svelte = {},
   -- Terraform
   terraformls = {},
   -- Typescript
