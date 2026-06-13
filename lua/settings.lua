@@ -48,6 +48,9 @@ vim.opt.fillchars = { eob = ' ' }
 
 vim.o.inccommand = 'split'
 
+-- Hide tab line
+vim.o.showtabline = 0
+
 -- Highlight line in whic the cursor is
 vim.o.cursorline = true
 
