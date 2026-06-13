@@ -88,3 +88,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
   callback = function() vim.hl.on_yank() end,
 })
+
+-- Keymap to restart Neovim
+vim.keymap.set('n', '<leader>pr', function() vim.cmd ':restart:' end, { desc = 'Restart Neovim' })

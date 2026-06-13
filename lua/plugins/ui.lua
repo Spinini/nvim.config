@@ -21,7 +21,7 @@ require('which-key').setup {
     { '<leader>d', group = '[D]ebug', mode = { 'n', 'v' } },
     { '<leader>f', group = '[F]ind', mode = { 'n', 'v' } },
     { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
-    { '<leader>p', group = '[P]ackages', mode = { 'n', 'v' } },
+    { '<leader>p', group = 'Neovim Settings', mode = { 'n', 'v' } },
     { '<leader>t', group = '[T]oggle', mode = { 'n', 'v' } },
     { 'gr', group = 'LSP Actions', mode = { 'n' } },
   },

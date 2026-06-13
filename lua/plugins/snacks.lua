@@ -30,6 +30,11 @@ Snacks.setup {
 -- Keybind to open explorer
 vim.keymap.set('n', '\\', function() Snacks.explorer {} end)
 
+-- Keybind to open explorer at config folder
+vim.keymap.set("n", "<leader>pc", function()
+  Snacks.explorer({ cwd = vim.fn.stdpath("config") })
+end, { desc = "Neovim Config Explorer" })
+
 -- Scratchpad
 vim.keymap.set('n', '<leader>.', function() Snacks.scratch() end, { desc = 'Toggle Scratch Buffer' })
 
